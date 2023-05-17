@@ -4,12 +4,12 @@ import { ProvinciaApi } from './ProvinciaApi'
 export class ProvinciaService {
     static async getProvincias (): Promise<Array<Provincia>> {
         const provinciaApi = new ProvinciaApi()
-        const response = (await provinciaApi.getProvincias()).map( (unaProvincia)=>{
+        return (await provinciaApi.getProvincias()).map( (unaProvincia)=>{
             const provincia = new Provincia()
             provincia.setProvincia(unaProvincia)
             return provincia
         })
-        return response
+
     }
     static async getProvincia (provinciaId: number): Promise<Provincia> {
         const provinciaApi = new ProvinciaApi()
@@ -21,12 +21,13 @@ export class ProvinciaService {
 
     static async deleteProvincia (provinciaId: number): Promise <number>  {
         const provinciaApi = new ProvinciaApi()
-        const response = await provinciaApi.deleteProvinciaByID(provinciaId)
-        return response
+        return await provinciaApi.deleteProvinciaByID(provinciaId)
+
     }
 
     static async putProvincia(provinciaId: Number, nuevoNombre: string){
         const provinciaApi = new ProvinciaApi()
-        const response =  await provinciaApi.putProvinciaByID(provinciaId,nuevoNombre)
+        return  await provinciaApi.putProvinciaByID(provinciaId,nuevoNombre)
+
     }
 }

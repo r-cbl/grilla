@@ -1,5 +1,4 @@
 import axios from 'axios';
-import {Provincia} from "../domain/Provincia";
 import {ProvinciaType} from "../types/ProvinciaType";
 
 
