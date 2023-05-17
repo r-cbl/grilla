@@ -4,9 +4,9 @@ export class Provincia {
     id: number
     nombre: string
 
-    constructor() {
-        this.id = -1
-        this.nombre = ''
+    constructor(id = -1, nombre = '') {
+        this.id = id
+        this.nombre = nombre
     }
     setProvincia (provincia: ProvinciaType) {
         this.id = provincia.id
